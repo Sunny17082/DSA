@@ -240,6 +240,29 @@ void display(Node* head)
         head=head->next;
     }
 }
+void bubbleSort()
+{
+    int swapped;
+    struct Node* h = head, * p = NULL;
+    do
+    {
+        swapped = 0;
+        h = head;
+        while(h->next!=p)
+        {
+            if(h->data > h->next->data)
+            {
+                int temp = h->data;
+                h->data = h->next->data;
+                h->next->data = temp;
+                swapped = 1;
+            }
+            h = h->next;
+        }
+        p = h;
+    }
+    while(swapped);
+}
 void display1(Node* head)
 {
     if(head!=NULL)
@@ -335,6 +358,7 @@ int main ()
     // concatenate(head,second);
     // merge(head,second);
     // display(third);
+    // bubbleSort()
     Node* t1;
     Node* t2;
     t1=head->next->next;
